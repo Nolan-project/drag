@@ -33,14 +33,14 @@
 
     document.addEventListener('mousedown', (e) => {
       isDragging = true;
-      offsetX = e.offsetX; // Store the offset of the click from the element's left edge
-      offsetY = e.offsetY; // Store the offset of the click from the element's top edge
-      draggableElement.style.cursor = 'grabbing'; // Change cursor to indicate that the element is being dragged
+      offsetX = e.offsetX;
+      offsetY = e.offsetY; 
+      draggableElement.style.cursor = 'grabbing';
     });
 
     document.addEventListener('mousemove', (e) => {
       if (isDragging) {
-        draggableElement.style.width = `${e.clientX - offsetX}px` + draggableElement.width;
+        draggableElement.style.width = `${e.clientX - offsetX}px` + draggableElement.style.width;
        
       }
     });

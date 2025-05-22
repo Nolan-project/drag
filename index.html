@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mouse Drag Example</title>
+  <title>Drag</title>
   <style>
     .draggable {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: lightblue;
-      cursor: grab; /* Change cursor to indicate that the element is draggable */
+      width: 400px;
+      height: 1px;
+      background-color: black;
+      cursor: grab; 
     }
-    /* Add a style to make the cursor change when it's over the draggable element */
+    
     .draggable:hover {
         cursor: grab;
+    }
+    #background {
+      width: 100%;
+      height: 100%;
+      background-color: sky-blue;
     }
   </style>
 </head>
 <body>
 
-  <div class="draggable">Drag me!</div>
-
+  <div class="draggable"></div>
+  <div id='background'></div>
   <script>
     const draggableElement = document.querySelector('.draggable');
+    const bg = document.getElementById('background');
     let isDragging = false;
     let offsetX, offsetY;
 
-    draggableElement.addEventListener('mousedown', (e) => {
+    document.addEventListener('mousedown', (e) => {
       isDragging = true;
       offsetX = e.offsetX; // Store the offset of the click from the element's left edge
       offsetY = e.offsetY; // Store the offset of the click from the element's top edge

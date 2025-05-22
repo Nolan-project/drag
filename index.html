@@ -34,8 +34,8 @@
 
     document.addEventListener('mousemove', (e) => {
       if (isDragging) {
-        draggableElement.style.left = `${e.clientX - offsetX}px`;
-        draggableElement.style.top = `${e.clientY - offsetY}px`;
+        draggableElement.style.width = `${e.clientX - offsetX}px`;
+       
       }
     });
 
